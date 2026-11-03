@@ -1,0 +1,22 @@
+# Times are seconds; all thresholds are engineering defaults, not validated clinical criteria.
+duration_seconds: 180
+analysis_hz: 10
+window_seconds: 5
+snapshot_interval_seconds: 1
+video_queue_size: 2
+audio_queue_size: 64
+utterance_queue_size: 4
+llm_queue_size: 4
+drain_timeout_seconds: 30
+audio:
+  sample_rate: 16000
+  block_seconds: 0.02
+  rms_threshold: 0.012
+  minimum_speech_seconds: 0.4
+  silence_seconds: 0.8
+  maximum_utterance_seconds: 15
+  pre_roll_seconds: 0.2
+llm:
+  timeout_seconds: 15
+  history_turns: 4
+  maximum_transcript_characters: 3000

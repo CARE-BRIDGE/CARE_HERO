@@ -1,0 +1,11 @@
+{
+  "maximum_analysis_width": 1280,
+  "maximum_analysis_height": 720,
+  "minimum_landmark_visibility": 0.5,
+  "front_facing_maximum_offset": 0.35,
+  "pose_model_complexity": 1,
+  "minimum_detection_confidence": 0.5,
+  "minimum_tracking_confidence": 0.5,
+  "refine_face_landmarks": true
+}
+

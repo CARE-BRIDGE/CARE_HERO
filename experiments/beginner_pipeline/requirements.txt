@@ -1,0 +1,8 @@
+mediapipe==0.10.21
+numpy>=1.26,<2.0
+opencv-contrib-python==4.11.0.86
+pytest>=8,<9
+
+# 선택 기능: 영상 음성 전사
+# faster-whisper>=1.1,<2
+

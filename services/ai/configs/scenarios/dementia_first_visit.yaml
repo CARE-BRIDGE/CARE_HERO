@@ -1,0 +1,61 @@
+scenario_id: dementia_first_visit
+scenario_name: 치매 어르신 첫 방문 행동 리허설
+description: 정면 자세, 몸통 정렬, 자세 변동과 검출 품질을 기초 평가한다.
+threshold_status: provisional
+minimum_valid_frames: 10
+minimum_detection_rate: 0.5
+minimum_landmark_visibility: 0.5
+good_score_threshold: 80.0
+
+metrics:
+  - id: detection_quality
+    display_name: 랜드마크 검출 품질
+    enabled: true
+    weight: 0.15
+    evaluation: higher_is_better
+    target: 0.9
+    unit: ratio
+    feedback:
+      good: 분석 가능한 자세가 영상 전반에서 안정적으로 검출되었습니다.
+      improve: 전신이 프레임 안에 들어오도록 조명과 카메라 위치를 조정해 보세요.
+      unavailable: 자세 검출 데이터가 부족해 평가할 수 없습니다.
+
+  - id: front_facing_ratio
+    display_name: 2D 정면 자세 추정 비율
+    enabled: true
+    weight: 0.35
+    evaluation: higher_is_better
+    target: 0.9
+    maximum_nose_offset_shoulder_widths: 0.35
+    unit: ratio
+    feedback:
+      good: 코와 양쪽 어깨의 2D 배치가 정면에 가까운 프레임이 많았습니다.
+      improve: 인사할 때 몸과 얼굴이 상대를 향하도록 정면 자세를 연습해 보세요.
+      unavailable: 코와 양쪽 어깨 landmark가 충분하지 않습니다.
+
+  - id: torso_alignment
+    display_name: 몸통 수직 정렬
+    enabled: true
+    weight: 0.25
+    evaluation: lower_is_better
+    good_maximum: 5.0
+    poor_minimum: 20.0
+    unit: degrees
+    feedback:
+      good: 몸통이 영상의 수직축에 비교적 안정적으로 정렬되었습니다.
+      improve: 한쪽으로 기울지 않도록 어깨와 골반의 중심을 맞춰 보세요.
+      unavailable: 양쪽 어깨와 골반 landmark가 충분하지 않습니다.
+
+  - id: torso_stability
+    display_name: 몸통 기울기 변동
+    enabled: true
+    weight: 0.25
+    evaluation: lower_is_better
+    good_maximum: 2.5
+    poor_minimum: 12.0
+    unit: degrees_std
+    feedback:
+      good: 영상 동안 몸통 기울기의 변동이 작았습니다.
+      improve: 인사 자세를 유지할 때 좌우 흔들림을 줄여 보세요.
+      unavailable: 시간에 따른 몸통 기울기 데이터가 충분하지 않습니다.
+

@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: care-hero-local
+Version: 0.1.0
+Summary: Local video to MediaPipe Pose and FaceMesh landmark pipeline
+Requires-Python: <3.13,>=3.11
+Requires-Dist: mediapipe==0.10.21
+Requires-Dist: jax==0.4.38
+Requires-Dist: jaxlib==0.4.38
+Requires-Dist: numpy<2.0,>=1.26
+Requires-Dist: opencv-contrib-python==4.11.0.86
+Requires-Dist: openai<3,>=2.0
+Requires-Dist: pydantic<3,>=2.10
+Requires-Dist: PyYAML<7,>=6.0
+Provides-Extra: dev
+Requires-Dist: pytest<9,>=8; extra == "dev"
+Provides-Extra: stt
+Requires-Dist: faster-whisper<2,>=1.1; extra == "stt"
+Provides-Extra: realtime
+Requires-Dist: sounddevice<0.6,>=0.5; extra == "realtime"
+Requires-Dist: faster-whisper<2,>=1.1; extra == "realtime"
+Provides-Extra: figures
+Requires-Dist: matplotlib<4,>=3.8; extra == "figures"

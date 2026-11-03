@@ -1,0 +1,383 @@
+{
+  "schema_version": "2.0",
+  "mode": "synthetic_demo",
+  "status": "completed",
+  "error_code": null,
+  "capture_duration_seconds": 2.0,
+  "settings": {
+    "duration_seconds": 2.0,
+    "analysis_hz": 10.0,
+    "window_seconds": 5.0,
+    "snapshot_interval_seconds": 1.0,
+    "video_queue_size": 2,
+    "audio_queue_size": 64,
+    "utterance_queue_size": 4,
+    "llm_queue_size": 4,
+    "drain_timeout_seconds": 30.0,
+    "audio": {
+      "sample_rate": 16000,
+      "block_seconds": 0.02,
+      "rms_threshold": 0.012,
+      "minimum_speech_seconds": 0.4,
+      "silence_seconds": 0.8,
+      "maximum_utterance_seconds": 15.0,
+      "pre_roll_seconds": 0.2
+    },
+    "llm": {
+      "timeout_seconds": 15.0,
+      "history_turns": 4,
+      "maximum_transcript_characters": 3000
+    }
+  },
+  "scenario": {
+    "scenario_id": "dementia_first_visit",
+    "scenario_name": "치매 어르신 첫 방문 행동 리허설",
+    "description": "정면 자세, 몸통 정렬, 자세 변동과 검출 품질을 기초 평가한다.",
+    "threshold_status": "provisional",
+    "minimum_valid_frames": 10,
+    "minimum_detection_rate": 0.5,
+    "minimum_landmark_visibility": 0.5,
+    "good_score_threshold": 80.0,
+    "metrics": [
+      {
+        "id": "detection_quality",
+        "display_name": "랜드마크 검출 품질",
+        "enabled": true,
+        "weight": 0.15,
+        "evaluation": "higher_is_better",
+        "unit": "ratio",
+        "feedback": {
+          "good": "분석 가능한 자세가 영상 전반에서 안정적으로 검출되었습니다.",
+          "improve": "전신이 프레임 안에 들어오도록 조명과 카메라 위치를 조정해 보세요.",
+          "unavailable": "자세 검출 데이터가 부족해 평가할 수 없습니다."
+        },
+        "target": 0.9,
+        "good_maximum": null,
+        "poor_minimum": null,
+        "maximum_nose_offset_shoulder_widths": null
+      },
+      {
+        "id": "front_facing_ratio",
+        "display_name": "2D 정면 자세 추정 비율",
+        "enabled": true,
+        "weight": 0.35,
+        "evaluation": "higher_is_better",
+        "unit": "ratio",
+        "feedback": {
+          "good": "코와 양쪽 어깨의 2D 배치가 정면에 가까운 프레임이 많았습니다.",
+          "improve": "인사할 때 몸과 얼굴이 상대를 향하도록 정면 자세를 연습해 보세요.",
+          "unavailable": "코와 양쪽 어깨 landmark가 충분하지 않습니다."
+        },
+        "target": 0.9,
+        "good_maximum": null,
+        "poor_minimum": null,
+        "maximum_nose_offset_shoulder_widths": 0.35
+      },
+      {
+        "id": "torso_alignment",
+        "display_name": "몸통 수직 정렬",
+        "enabled": true,
+        "weight": 0.25,
+        "evaluation": "lower_is_better",
+        "unit": "degrees",
+        "feedback": {
+          "good": "몸통이 영상의 수직축에 비교적 안정적으로 정렬되었습니다.",
+          "improve": "한쪽으로 기울지 않도록 어깨와 골반의 중심을 맞춰 보세요.",
+          "unavailable": "양쪽 어깨와 골반 landmark가 충분하지 않습니다."
+        },
+        "target": null,
+        "good_maximum": 5.0,
+        "poor_minimum": 20.0,
+        "maximum_nose_offset_shoulder_widths": null
+      },
+      {
+        "id": "torso_stability",
+        "display_name": "몸통 기울기 변동",
+        "enabled": true,
+        "weight": 0.25,
+        "evaluation": "lower_is_better",
+        "unit": "degrees_std",
+        "feedback": {
+          "good": "영상 동안 몸통 기울기의 변동이 작았습니다.",
+          "improve": "인사 자세를 유지할 때 좌우 흔들림을 줄여 보세요.",
+          "unavailable": "시간에 따른 몸통 기울기 데이터가 충분하지 않습니다."
+        },
+        "target": null,
+        "good_maximum": 2.5,
+        "poor_minimum": 12.0,
+        "maximum_nose_offset_shoulder_widths": null
+      }
+    ]
+  },
+  "summary": {
+    "analyzed_frames": 20,
+    "retained_compact_frames": 20,
+    "face_detected_frames": 0,
+    "face_error_frames": 0,
+    "coordinate_space_for_scoring": "image_height_normalized"
+  },
+  "rule_based": {
+    "scenario_id": "dementia_first_visit",
+    "scenario_name": "치매 어르신 첫 방문 행동 리허설",
+    "threshold_status": "provisional",
+    "overall_status": "valid",
+    "total_score": 100.0,
+    "metrics": [
+      {
+        "metric_id": "detection_quality",
+        "display_name": "랜드마크 검출 품질",
+        "raw_value": 1.0,
+        "unit": "ratio",
+        "status": "valid",
+        "score": 100.0,
+        "weight": 0.15,
+        "valid_frame_count": 20,
+        "total_frame_count": 20,
+        "feedback": "분석 가능한 자세가 영상 전반에서 안정적으로 검출되었습니다.",
+        "warnings": []
+      },
+      {
+        "metric_id": "front_facing_ratio",
+        "display_name": "2D 정면 자세 추정 비율",
+        "raw_value": 1.0,
+        "unit": "ratio",
+        "status": "valid",
+        "score": 100.0,
+        "weight": 0.35,
+        "valid_frame_count": 20,
+        "total_frame_count": 20,
+        "feedback": "코와 양쪽 어깨의 2D 배치가 정면에 가까운 프레임이 많았습니다.",
+        "warnings": []
+      },
+      {
+        "metric_id": "torso_alignment",
+        "display_name": "몸통 수직 정렬",
+        "raw_value": 0.0,
+        "unit": "degrees",
+        "status": "valid",
+        "score": 100.0,
+        "weight": 0.25,
+        "valid_frame_count": 20,
+        "total_frame_count": 20,
+        "feedback": "몸통이 영상의 수직축에 비교적 안정적으로 정렬되었습니다.",
+        "warnings": []
+      },
+      {
+        "metric_id": "torso_stability",
+        "display_name": "몸통 기울기 변동",
+        "raw_value": 0.0,
+        "unit": "degrees_std",
+        "status": "valid",
+        "score": 100.0,
+        "weight": 0.25,
+        "valid_frame_count": 20,
+        "total_frame_count": 20,
+        "feedback": "영상 동안 몸통 기울기의 변동이 작았습니다.",
+        "warnings": []
+      }
+    ],
+    "caveats": [
+      "모든 임계값과 점수는 provisional이며 공식 교육 기준이 아닙니다.",
+      "2D MediaPipe landmark 기반 결과로 실제 거리, 속도, 시선 또는 의도를 측정하지 않습니다.",
+      "상반신 촬영으로 확인 가능한 landmark 기반 지표만 평가했습니다."
+    ]
+  },
+  "turns": [
+    {
+      "utterance_id": 1,
+      "start_seconds": 0.0,
+      "end_seconds": 1.5,
+      "vision_context": {
+        "window_start_seconds": 0.015982207842171192,
+        "window_end_seconds": 0.884845457971096,
+        "analyzed_frame_count": 10,
+        "rule_based": {
+          "scenario_id": "dementia_first_visit",
+          "scenario_name": "치매 어르신 첫 방문 행동 리허설",
+          "threshold_status": "provisional",
+          "overall_status": "valid",
+          "total_score": 100.0,
+          "metrics": [
+            {
+              "metric_id": "detection_quality",
+              "display_name": "랜드마크 검출 품질",
+              "raw_value": 1.0,
+              "unit": "ratio",
+              "status": "valid",
+              "score": 100.0,
+              "weight": 0.15,
+              "valid_frame_count": 10,
+              "total_frame_count": 10,
+              "feedback": "분석 가능한 자세가 영상 전반에서 안정적으로 검출되었습니다.",
+              "warnings": []
+            },
+            {
+              "metric_id": "front_facing_ratio",
+              "display_name": "2D 정면 자세 추정 비율",
+              "raw_value": 1.0,
+              "unit": "ratio",
+              "status": "valid",
+              "score": 100.0,
+              "weight": 0.35,
+              "valid_frame_count": 10,
+              "total_frame_count": 10,
+              "feedback": "코와 양쪽 어깨의 2D 배치가 정면에 가까운 프레임이 많았습니다.",
+              "warnings": []
+            },
+            {
+              "metric_id": "torso_alignment",
+              "display_name": "몸통 수직 정렬",
+              "raw_value": 0.0,
+              "unit": "degrees",
+              "status": "valid",
+              "score": 100.0,
+              "weight": 0.25,
+              "valid_frame_count": 10,
+              "total_frame_count": 10,
+              "feedback": "몸통이 영상의 수직축에 비교적 안정적으로 정렬되었습니다.",
+              "warnings": []
+            },
+            {
+              "metric_id": "torso_stability",
+              "display_name": "몸통 기울기 변동",
+              "raw_value": 0.0,
+              "unit": "degrees_std",
+              "status": "valid",
+              "score": 100.0,
+              "weight": 0.25,
+              "valid_frame_count": 10,
+              "total_frame_count": 10,
+              "feedback": "영상 동안 몸통 기울기의 변동이 작았습니다.",
+              "warnings": []
+            }
+          ],
+          "caveats": [
+            "모든 임계값과 점수는 provisional이며 공식 교육 기준이 아닙니다.",
+            "2D MediaPipe landmark 기반 결과로 실제 거리, 속도, 시선 또는 의도를 측정하지 않습니다.",
+            "상반신 촬영으로 확인 가능한 landmark 기반 지표만 평가했습니다."
+          ]
+        }
+      },
+      "vision_context_age_seconds": 0.615154542028904,
+      "llm_status": "skipped",
+      "transcription": {
+        "status": "success",
+        "backend": "synthetic_fixture",
+        "model": "fixture-v1",
+        "language": "ko",
+        "duration_seconds": 1.5,
+        "full_text": "많이 속상하시겠어요. 같이 찾아볼게요.",
+        "segments": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 1.5,
+            "text": "많이 속상하시겠어요. 같이 찾아볼게요."
+          }
+        ],
+        "error": null
+      },
+      "stt_status": "success",
+      "stt_latency_ms": 0.18
+    }
+  ],
+  "llm_status": "skipped",
+  "llm_feedback": null,
+  "queues": {
+    "video": {
+      "dropped": 27,
+      "pending": 2
+    },
+    "audio": {
+      "dropped": 0,
+      "pending": 0
+    },
+    "stt": {
+      "dropped": 0,
+      "pending": 0
+    },
+    "llm": {
+      "dropped": 0,
+      "pending": 0
+    }
+  },
+  "unfinished_workers": [],
+  "process_status": {
+    "session": {
+      "sequence": 44,
+      "elapsed_seconds": 2.0591,
+      "stage": "session",
+      "status": "completed",
+      "data": {}
+    },
+    "vision": {
+      "sequence": 39,
+      "elapsed_seconds": 2.0555,
+      "stage": "vision",
+      "status": "done",
+      "data": {
+        "processed": 20
+      }
+    },
+    "stt": {
+      "sequence": 38,
+      "elapsed_seconds": 2.0553,
+      "stage": "stt",
+      "status": "done",
+      "data": {
+        "processed": 1
+      }
+    },
+    "audio": {
+      "sequence": 41,
+      "elapsed_seconds": 2.0556,
+      "stage": "audio",
+      "status": "done",
+      "data": {
+        "dropped_blocks": 0
+      }
+    },
+    "llm_turn": {
+      "sequence": 6,
+      "elapsed_seconds": 0.0159,
+      "stage": "llm_turn",
+      "status": "skipped",
+      "data": {}
+    },
+    "capture": {
+      "sequence": 32,
+      "elapsed_seconds": 2.0082,
+      "stage": "capture",
+      "status": "done",
+      "data": {
+        "processed": 49,
+        "dropped": 27
+      }
+    },
+    "rules": {
+      "sequence": 40,
+      "elapsed_seconds": 2.0555,
+      "stage": "rules",
+      "status": "done",
+      "data": {
+        "processed": 2
+      }
+    },
+    "segmentation": {
+      "sequence": 36,
+      "elapsed_seconds": 2.0551,
+      "stage": "segmentation",
+      "status": "done",
+      "data": {
+        "processed_blocks": 75,
+        "discontinuities": 0
+      }
+    },
+    "export": {
+      "sequence": 43,
+      "elapsed_seconds": 2.0589,
+      "stage": "export",
+      "status": "completed",
+      "data": {}
+    }
+  }
+}

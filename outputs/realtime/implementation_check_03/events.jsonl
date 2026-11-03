@@ -1,0 +1,44 @@
+{"sequence": 1, "elapsed_seconds": 0.0001, "stage": "session", "status": "initializing", "data": {"synthetic": true}}
+{"sequence": 2, "elapsed_seconds": 0.0001, "stage": "vision", "status": "ready", "data": {}}
+{"sequence": 3, "elapsed_seconds": 0.0001, "stage": "stt", "status": "initializing", "data": {}}
+{"sequence": 4, "elapsed_seconds": 0.0001, "stage": "stt", "status": "ready", "data": {}}
+{"sequence": 5, "elapsed_seconds": 0.0158, "stage": "audio", "status": "running", "data": {"sample_rate": 16000}}
+{"sequence": 6, "elapsed_seconds": 0.0159, "stage": "llm_turn", "status": "skipped", "data": {}}
+{"sequence": 7, "elapsed_seconds": 0.0159, "stage": "capture", "status": "running", "data": {}}
+{"sequence": 8, "elapsed_seconds": 0.0165, "stage": "vision", "status": "running", "data": {"processed": 1, "pose_detected": true, "face_status": "not_run", "face_landmark_count": 0, "queue_age_ms": 0.32, "latency_ms": 0.06, "pose_ms": 0.0, "face_ms": 0.0}}
+{"sequence": 9, "elapsed_seconds": 0.0169, "stage": "rules", "status": "running", "data": {"processed": 1, "window_end_seconds": 0.015982207842171192, "output_status": "insufficient_data"}}
+{"sequence": 10, "elapsed_seconds": 0.017, "stage": "session", "status": "running", "data": {"elapsed_seconds": 0.02, "session_fraction": 0.008145395433530211, "analyzed": 1, "video_dropped": 0, "audio_dropped": 0}}
+{"sequence": 11, "elapsed_seconds": 0.1316, "stage": "vision", "status": "running", "data": {"processed": 2, "pose_detected": true, "face_status": "not_run", "face_landmark_count": 0, "queue_age_ms": 66.88, "latency_ms": 4.45, "pose_ms": 0.0, "face_ms": 0.0}}
+{"sequence": 12, "elapsed_seconds": 0.2292, "stage": "vision", "status": "running", "data": {"processed": 3, "pose_detected": true, "face_status": "not_run", "face_landmark_count": 0, "queue_age_ms": 74.68, "latency_ms": 0.03, "pose_ms": 0.0, "face_ms": 0.0}}
+{"sequence": 13, "elapsed_seconds": 0.3301, "stage": "vision", "status": "running", "data": {"processed": 4, "pose_detected": true, "face_status": "not_run", "face_landmark_count": 0, "queue_age_ms": 49.54, "latency_ms": 0.05, "pose_ms": 0.0, "face_ms": 0.0}}
+{"sequence": 14, "elapsed_seconds": 0.4307, "stage": "vision", "status": "running", "data": {"processed": 5, "pose_detected": true, "face_status": "not_run", "face_landmark_count": 0, "queue_age_ms": 69.28, "latency_ms": 0.08, "pose_ms": 0.0, "face_ms": 0.0}}
+{"sequence": 15, "elapsed_seconds": 0.5324, "stage": "vision", "status": "running", "data": {"processed": 6, "pose_detected": true, "face_status": "not_run", "face_landmark_count": 0, "queue_age_ms": 44.31, "latency_ms": 0.07, "pose_ms": 0.0, "face_ms": 0.0}}
+{"sequence": 16, "elapsed_seconds": 0.6367, "stage": "vision", "status": "running", "data": {"processed": 7, "pose_detected": true, "face_status": "not_run", "face_landmark_count": 0, "queue_age_ms": 73.83, "latency_ms": 0.12, "pose_ms": 0.0, "face_ms": 0.0}}
+{"sequence": 17, "elapsed_seconds": 0.7367, "stage": "vision", "status": "running", "data": {"processed": 8, "pose_detected": true, "face_status": "not_run", "face_landmark_count": 0, "queue_age_ms": 58.14, "latency_ms": 0.1, "pose_ms": 0.0, "face_ms": 0.0}}
+{"sequence": 18, "elapsed_seconds": 0.8373, "stage": "vision", "status": "running", "data": {"processed": 9, "pose_detected": true, "face_status": "not_run", "face_landmark_count": 0, "queue_age_ms": 75.45, "latency_ms": 0.18, "pose_ms": 0.0, "face_ms": 0.0}}
+{"sequence": 19, "elapsed_seconds": 0.9378, "stage": "vision", "status": "running", "data": {"processed": 10, "pose_detected": true, "face_status": "not_run", "face_landmark_count": 0, "queue_age_ms": 52.62, "latency_ms": 0.12, "pose_ms": 0.0, "face_ms": 0.0}}
+{"sequence": 20, "elapsed_seconds": 1.0362, "stage": "rules", "status": "running", "data": {"processed": 2, "window_end_seconds": 0.884845457971096, "output_status": "valid"}}
+{"sequence": 21, "elapsed_seconds": 1.0362, "stage": "session", "status": "running", "data": {"elapsed_seconds": 1.02, "session_fraction": 0.5104986876249313, "analyzed": 10, "video_dropped": 13, "audio_dropped": 0}}
+{"sequence": 22, "elapsed_seconds": 1.0383, "stage": "vision", "status": "running", "data": {"processed": 11, "pose_detected": true, "face_status": "not_run", "face_landmark_count": 0, "queue_age_ms": 68.59, "latency_ms": 0.08, "pose_ms": 0.0, "face_ms": 0.0}}
+{"sequence": 23, "elapsed_seconds": 1.1431, "stage": "vision", "status": "running", "data": {"processed": 12, "pose_detected": true, "face_status": "not_run", "face_landmark_count": 0, "queue_age_ms": 51.51, "latency_ms": 0.06, "pose_ms": 0.0, "face_ms": 0.0}}
+{"sequence": 24, "elapsed_seconds": 1.2442, "stage": "vision", "status": "running", "data": {"processed": 13, "pose_detected": true, "face_status": "not_run", "face_landmark_count": 0, "queue_age_ms": 71.96, "latency_ms": 0.14, "pose_ms": 0.0, "face_ms": 0.0}}
+{"sequence": 25, "elapsed_seconds": 1.3464, "stage": "vision", "status": "running", "data": {"processed": 14, "pose_detected": true, "face_status": "not_run", "face_landmark_count": 0, "queue_age_ms": 52.25, "latency_ms": 0.17, "pose_ms": 0.0, "face_ms": 0.0}}
+{"sequence": 26, "elapsed_seconds": 1.4472, "stage": "vision", "status": "running", "data": {"processed": 15, "pose_detected": true, "face_status": "not_run", "face_landmark_count": 0, "queue_age_ms": 74.76, "latency_ms": 0.08, "pose_ms": 0.0, "face_ms": 0.0}}
+{"sequence": 27, "elapsed_seconds": 1.548, "stage": "vision", "status": "running", "data": {"processed": 16, "pose_detected": true, "face_status": "not_run", "face_landmark_count": 0, "queue_age_ms": 48.18, "latency_ms": 0.11, "pose_ms": 0.0, "face_ms": 0.0}}
+{"sequence": 28, "elapsed_seconds": 1.6488, "stage": "vision", "status": "running", "data": {"processed": 17, "pose_detected": true, "face_status": "not_run", "face_landmark_count": 0, "queue_age_ms": 64.05, "latency_ms": 0.12, "pose_ms": 0.0, "face_ms": 0.0}}
+{"sequence": 29, "elapsed_seconds": 1.7509, "stage": "vision", "status": "running", "data": {"processed": 18, "pose_detected": true, "face_status": "not_run", "face_landmark_count": 0, "queue_age_ms": 46.68, "latency_ms": 0.12, "pose_ms": 0.0, "face_ms": 0.0}}
+{"sequence": 30, "elapsed_seconds": 1.8527, "stage": "vision", "status": "running", "data": {"processed": 19, "pose_detected": true, "face_status": "not_run", "face_landmark_count": 0, "queue_age_ms": 76.78, "latency_ms": 0.1, "pose_ms": 0.0, "face_ms": 0.0}}
+{"sequence": 31, "elapsed_seconds": 1.9534, "stage": "vision", "status": "running", "data": {"processed": 20, "pose_detected": true, "face_status": "not_run", "face_landmark_count": 0, "queue_age_ms": 58.42, "latency_ms": 0.09, "pose_ms": 0.0, "face_ms": 0.0}}
+{"sequence": 32, "elapsed_seconds": 2.0082, "stage": "capture", "status": "done", "data": {"processed": 49, "dropped": 27}}
+{"sequence": 33, "elapsed_seconds": 2.0084, "stage": "session", "status": "draining", "data": {}}
+{"sequence": 34, "elapsed_seconds": 2.0548, "stage": "segmentation", "status": "completed", "data": {"utterance_id": 1, "start_seconds": 0.0, "end_seconds": 1.5, "reason": "session_end", "queued": 1, "dropped": 0}}
+{"sequence": 35, "elapsed_seconds": 2.055, "stage": "stt", "status": "running", "data": {"utterance_id": 1, "queued": 0}}
+{"sequence": 36, "elapsed_seconds": 2.0551, "stage": "segmentation", "status": "done", "data": {"processed_blocks": 75, "discontinuities": 0}}
+{"sequence": 37, "elapsed_seconds": 2.0552, "stage": "stt", "status": "success", "data": {"utterance_id": 1, "processed": 1, "latency_ms": 0.18, "output_age_seconds": 0.555}}
+{"sequence": 38, "elapsed_seconds": 2.0553, "stage": "stt", "status": "done", "data": {"processed": 1}}
+{"sequence": 39, "elapsed_seconds": 2.0555, "stage": "vision", "status": "done", "data": {"processed": 20}}
+{"sequence": 40, "elapsed_seconds": 2.0555, "stage": "rules", "status": "done", "data": {"processed": 2}}
+{"sequence": 41, "elapsed_seconds": 2.0556, "stage": "audio", "status": "done", "data": {"dropped_blocks": 0}}
+{"sequence": 42, "elapsed_seconds": 2.056, "stage": "export", "status": "running", "data": {}}
+{"sequence": 43, "elapsed_seconds": 2.0589, "stage": "export", "status": "completed", "data": {}}
+{"sequence": 44, "elapsed_seconds": 2.0591, "stage": "session", "status": "completed", "data": {}}

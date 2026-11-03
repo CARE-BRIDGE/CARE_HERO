@@ -1,0 +1,27 @@
+video:
+  supported_extensions: [".mp4", ".mov", ".avi"]
+  supported_image_extensions: [".jpg", ".jpeg", ".png", ".bmp", ".webp"]
+  max_analysis_width: 1280
+  max_analysis_height: 720
+  sample_every_n_frames: 1
+
+pose:
+  model_complexity: 1
+  min_detection_confidence: 0.5
+  min_tracking_confidence: 0.5
+  smooth_landmarks: true
+
+face_mesh:
+  enabled: true
+  max_num_faces: 1
+  refine_landmarks: true
+  min_detection_confidence: 0.5
+  min_tracking_confidence: 0.5
+
+stt:
+  enabled: false
+  model_size: small
+  device: auto
+  compute_type: int8
+  language: null
+  vad_filter: true

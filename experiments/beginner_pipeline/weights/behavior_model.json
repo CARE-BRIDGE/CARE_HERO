@@ -1,0 +1,62 @@
+{
+  "model_type": "numpy_logistic_regression",
+  "target": "needs_improvement",
+  "feature_names": [
+    "pose_detection_rate",
+    "face_detection_rate",
+    "front_facing_ratio",
+    "mean_abs_torso_tilt_deg",
+    "torso_tilt_std_deg",
+    "upper_body_ratio"
+  ],
+  "expanded_feature_names": [
+    "pose_detection_rate",
+    "face_detection_rate",
+    "front_facing_ratio",
+    "mean_abs_torso_tilt_deg",
+    "torso_tilt_std_deg",
+    "upper_body_ratio",
+    "mean_abs_torso_tilt_deg_missing",
+    "torso_tilt_std_deg_missing"
+  ],
+  "imputation_values": [
+    0.7974999999999999,
+    0.80625,
+    0.6729166666666667,
+    8.670588235294119,
+    5.129411764705883,
+    0.40791666666666665
+  ],
+  "standard_means": [
+    0.7974999999999999,
+    0.80625,
+    0.6729166666666667,
+    8.670588235294119,
+    5.129411764705882,
+    0.40791666666666665,
+    0.2916666666666667,
+    0.2916666666666667
+  ],
+  "standard_stds": [
+    0.14563796437284704,
+    0.13622323896212912,
+    0.1922342140607534,
+    3.9200090035911006,
+    2.4239713807926777,
+    0.3235220132472527,
+    0.45452967144315487,
+    0.45452967144315487
+  ],
+  "weights": [
+    -0.8810616526752973,
+    -1.3741918168732266,
+    -1.7476184902845446,
+    1.0741444054573455,
+    1.30343433578641,
+    -0.1271275900939615,
+    -0.17888811576292682,
+    -0.17888811576292682
+  ],
+  "bias": 0.38766430551897235,
+  "warning": "교육용 합성 데이터로 생성된 예제 weight이며 공식 점수나 진단에 사용할 수 없음"
+}
